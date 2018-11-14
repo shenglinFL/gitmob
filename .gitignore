@@ -1,5 +1,5 @@
 # For Gitmob only
-lib/common/Config/DebugNetworkConfig.dart
+lib/common/config/DebugNetworkConfig.dart
 
 # Miscellaneous
 *.class
