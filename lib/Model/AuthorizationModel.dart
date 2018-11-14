@@ -1,5 +1,3 @@
-import 'package:gitmob/network/Network.dart';
-import 'package:dio/dio.dart';
 class AuthorizationModel {
   static login() async {
 

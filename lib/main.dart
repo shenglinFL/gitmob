@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:gitmob/Model/AuthorizationModel.dart';
 import 'package:gitmob/Model/User.dart';
-void main() => runApp(MyApp());
+import 'package:gitmob/view/MainTabbar.dart';
+
+
+void main() => runApp(new MainTabbarController());//void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -62,10 +64,10 @@ class _MyHomePageState extends State<MyHomePage> {
   void getUser() async {
     User user = await User.getUser();
     print("LOGIN:"+user.login);
-    print("USERURL:"+user.html_url);
+    print("USERURL:"+user.htmlUrl);
 
     setState(() {
-      _middleText = user.login;
+      _middleText = user.nodeId;
     });
   }
 

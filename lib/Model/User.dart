@@ -8,15 +8,21 @@ part 'User.g.dart';
 class User {
   String login;
   int id;
-  String node_id;
-  String avatar_url;
-  String gravatar_id;
+  @JsonKey(name: "node_id")
+  String nodeId;
+  @JsonKey(name: "avatar_url")
+  String avatarUrl;
+  @JsonKey(name: "gravatar_id")
+  String gravatarId;
   String url;
-  String html_url;
-  String followers_url;
-  String gists_url;
+  @JsonKey(name: "html_url")
+  String htmlUrl;
+  @JsonKey(name: "followers_url")
+  String followersUrl;
+  @JsonKey(name: "gists_url")
+  String gistsUrl;
 
-  User(this.login, this.id, this.node_id, this.avatar_url, this.gravatar_id, this.url, this.html_url, this.followers_url);
+  User(this.login, this.id, this.nodeId, this.avatarUrl, this.gravatarId, this.url, this.htmlUrl, this.followersUrl, this.gistsUrl);
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
