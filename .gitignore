@@ -1,3 +1,6 @@
+# For Gitmob only
+**/common/Config/DebugConfig.dart
+
 # Miscellaneous
 *.class
 *.lock
