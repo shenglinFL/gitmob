@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:gitmob/common/Config/Config.dart';
-import 'package:gitmob/common/Config/DebugNetworkConfig.dart';
+import 'package:gitmob/common/config/Config.dart';
+import 'package:gitmob/common/config/DebugNetworkConfig.dart';
 import 'package:gitmob/common/config/DebugConfig.dart';
 
 class ResultData {
