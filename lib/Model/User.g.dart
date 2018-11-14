@@ -15,7 +15,8 @@ User _$UserFromJson(Map<String, dynamic> json) {
       json['gravatar_id'] as String,
       json['url'] as String,
       json['html_url'] as String,
-      json['followers_url'] as String);
+      json['followers_url'] as String)
+    ..gists_url = json['gists_url'] as String;
 }
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -26,5 +27,6 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'gravatar_id': instance.gravatar_id,
       'url': instance.url,
       'html_url': instance.html_url,
-      'followers_url': instance.followers_url
+      'followers_url': instance.followers_url,
+      'gists_url': instance.gists_url
     };

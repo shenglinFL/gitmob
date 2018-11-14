@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:gitmob/Model/AuthorizationModel.dart';
+import 'package:gitmob/Model/User.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -44,6 +45,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String _middleText = "You have pushed the button this many times:";
   int _counter = 0;
 
   void _incrementCounter() {
@@ -54,6 +56,16 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+    });
+  }
+
+  void getUser() async {
+    User user = await User.getUser();
+    print("LOGIN:"+user.login);
+    print("USERURL:"+user.html_url);
+
+    setState(() {
+      _middleText = user.login;
     });
   }
 
@@ -91,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              "$_middleText",
             ),
             Text(
               '$_counter',
@@ -99,9 +111,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             CupertinoButton(
               child: Text("Login"),
-              onPressed: () {
-                debugPrint("123");
-                AuthorizationModel.login();
+              onPressed: () async {
+//                AuthorizationModel.login();
+//                User user = await User.getUser();
+//                print(user.login);
+                getUser();
               },
             )
           ],
