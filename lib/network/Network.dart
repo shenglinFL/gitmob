@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:gitmob/Model/User.dart';
 import 'package:gitmob/common/Config/Config.dart';
-import 'package:gitmob/common/Config/DebugConfig.dart';
+import 'package:gitmob/common/Config/DebugNetworkConfig.dart';
+
 
 class Network {
   static getURL(String path) async {
@@ -18,6 +19,6 @@ class Network {
   }
 
   static builder(String path) {
-    return Config.BASE_URL + path + "?" + "client_id=" + DebugConfig.CLIENT_ID + "&" + "client_secret=" + DebugConfig.CLIENT_SECRET;
+    return Config.BASE_URL + path + "?" + "client_id=" + DebugNetworkConfig.CLIENT_ID + "&" + "client_secret=" + DebugNetworkConfig.CLIENT_SECRET;
   }
 }
