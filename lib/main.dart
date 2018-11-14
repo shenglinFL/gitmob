@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/cupertino.dart';
+import 'package:gitmob/Model/AuthorizationModel.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -96,6 +97,13 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+            CupertinoButton(
+              child: Text("Login"),
+              onPressed: () {
+                debugPrint("123");
+                AuthorizationModel.login();
+              },
+            )
           ],
         ),
       ),
