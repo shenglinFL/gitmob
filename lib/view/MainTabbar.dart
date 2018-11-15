@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:gitmob/view/UserView.dart';
+import 'package:after_layout/after_layout.dart';
 //import 'package:zzb/View/Home/HomeView.dart';
 
 class MainTabbarController extends StatefulWidget {
@@ -22,13 +23,13 @@ class MainTabbar extends StatefulWidget {
   _MainTabbarState createState() => _MainTabbarState();
 }
 
-class _MainTabbarState extends State<MainTabbar> {
+class _MainTabbarState extends State<MainTabbar> with AfterLayoutMixin<MainTabbar>{
   var _currentIndex = 0;
   
   var _contentView;
 
-  var _firstView = Text("Main");
-  var _secondView = UserView();
+  var _firstView;// = Text("Main");
+  var _secondView;// = UserView();
 
   var _appBar = new CupertinoNavigationBar(
     middle: Text(
@@ -42,9 +43,17 @@ class _MainTabbarState extends State<MainTabbar> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    _firstView = Text("Main");
+    _secondView = UserView();
+
+  }
+
+  @override
+  void afterFirstLayout(BuildContext context) {
     _currentIndex = 0;
     _contentView = _firstView;
   }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
