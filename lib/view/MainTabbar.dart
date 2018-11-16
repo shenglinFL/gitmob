@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:gitmob/view/UserView.dart';
 import 'package:after_layout/after_layout.dart';
+//import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 //import 'package:zzb/View/Home/HomeView.dart';
 
 class MainTabbarController extends StatefulWidget {
@@ -14,6 +15,15 @@ class _MainTabbarControllerState extends State<MainTabbarController> {
   Widget build(BuildContext context) {
     return new CupertinoApp(
       home: new MainTabbar(),
+//      routes: {
+//        "/": (_) => new MainTabbarController(),
+//        "/webWidget": (_) => new WebviewScaffold(
+//          url: "https://www.google.com",
+//          appBar: new AppBar(
+//            title: new Text("Widget webview"),
+//          ),
+//        ),
+//      },
     );
   }
 }

@@ -24,6 +24,7 @@ dependencies:
   cached_network_image: ^0.5.0 # 图片缓存
   dio: ^1.0.6 # 网络请求
   flutter_redux: ^0.5.2 # 状态保存，类型js的redux
+#  flutter_webview_plugin: ^0.3.0+2
 
   rxdart: ^0.19.0 #响应框架
   json_annotation: ^2.0.0 #序列化

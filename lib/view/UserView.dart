@@ -45,8 +45,26 @@ class _UserViewState extends State<UserView> with AfterLayoutMixin<UserView>{
         new Container(
           height: 200,
           color: Colors.blue,
-          child: new Center(
-            child: new CachedNetworkImage(imageUrl: _user?.avatarUrl ?? ""),
+          child: new Column(
+            children: <Widget>[
+              new Container(height: 20,),
+              new Container(
+                padding: EdgeInsets.all(10),
+                child: new Container(
+                  width: 80.0,
+                  height: 80.0,
+                  decoration: new BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                      image: new DecorationImage(
+                        fit: BoxFit.fill,
+                        image: new NetworkImage(_user?.avatarUrl ?? ""),//CachedNetworkImage(imageUrl: _user?.avatarUrl ?? ""),
+                      )
+                  ),
+                ),
+              ),
+              new Text(_user?.login ?? "", style: TextStyle(color: Colors.white),),
+            ],
           ),
         ),
         new Container(
@@ -71,6 +89,7 @@ class _UserViewState extends State<UserView> with AfterLayoutMixin<UserView>{
 //      _avatarImage = CachedNetworkImage(imageUrl: user.avatarUrl);
     });
   }
+
 }
 
 

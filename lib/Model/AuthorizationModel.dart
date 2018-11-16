@@ -17,13 +17,13 @@ class AuthorizationModel {
   static authorizations() async {
     
 // 获取token??
-//    Map<String, dynamic> data = const {
-//      "scopes": [
-//        "public_repo"
-//      ],
-//      "note": "admin script"
-//    };
-//    Network.post("/authorizations", null, data);
+    Map<String, dynamic> data = const {
+      "scopes": [
+        "public_repo"
+      ],
+      "note": "admin script"
+    };
+    Network.post("/authorizations", null, data);
 
 
 
@@ -32,10 +32,10 @@ class AuthorizationModel {
 //    Network.get("user/starred/flutterchina/flukit");
 
     // 设置star
-    Map<String, dynamic> data = const {
-      "ignored": "true",
-      "subscribed": "true"
-    };
-    Network.put("/repos/flutterchina/flukit/subscription",data);
+//    Map<String, dynamic> data = const {
+//      "ignored": "true",
+//      "subscribed": "true"
+//    };
+//    Network.put("/repos/flutterchina/flukit/subscription",data);
   }
 }
