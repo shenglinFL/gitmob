@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:gitmob/view/ExampleWidget.dart';
 import 'package:gitmob/view/UserView.dart';
 import 'package:after_layout/after_layout.dart';
 //import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
@@ -53,7 +54,7 @@ class _MainTabbarState extends State<MainTabbar> with AfterLayoutMixin<MainTabba
   void initState() {
     // TODO: implement initState
     super.initState();
-    _firstView = Text("Main");
+    _firstView = ExampleWidget();
     _secondView = UserView();
 
   }
